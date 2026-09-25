@@ -1,0 +1,15 @@
+D:\HocTap\tkpmhdt\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.AssemblyReference.cache
+D:\HocTap\tkpmhdt\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Forms.FrmMain.resources
+D:\HocTap\tkpmhdt\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+D:\HocTap\tkpmhdt\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+D:\HocTap\tkpmhdt\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+D:\HocTap\tkpmhdt\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+D:\HocTap\tkpmhdt\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+D:\HocTap\tkpmhdt\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+D:\HocTap\tkpmhdt\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+D:\HocTap\tkpmhdt\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+D:\HocTap\tkpmhdt\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe.config
+D:\HocTap\tkpmhdt\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Forms.FrmDanhMuc.resources
+D:\HocTap\tkpmhdt\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Forms.FrmPhongTienNghi.resources
+D:\HocTap\tkpmhdt\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Forms.FrmThongKe.resources
+D:\HocTap\tkpmhdt\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Forms.FrmTraPhong.resources
