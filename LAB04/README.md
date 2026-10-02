@@ -1,15 +1,35 @@
+```mermaid
+stateMachine BankATM
 stateDiagram-v2
-    [*] --> KhoiTao: Tạo đơn hàng từ giỏ
 
-    KhoiTao --> ChoThanhToan: Nhập thông tin & chọn thanh toán thẻ
+    [*] --> KhoiTao: createOrder()
+
+    state "DangXuLyThanhToan (Serving Payment)" as DangXuLy {
+        [*] --> KiemTraThongTinThe
+        KiemTraThongTinThe --> GuiCongThanhToan: [theHopLe == true] / requestPayment()
+        GuiCongThanhToan --> XacNhanKetQua: paymentCallback()
+        
+        --
+        entry / lockCart()
+        exit / unlockCart()
+    }
+
+    KhoiTao --> DangXuLy: submitOrder() / inputCard()
     
-    ChoThanhToan --> DaThanhToan: Cổng thanh toán báo Thành công
-    ChoThanhToan --> DaHuy: Thẻ bị từ chối / Khách hủy giao dịch
-
-    DaThanhToan --> DangGiao: Kho xuất hàng & bàn giao vận chuyển
+    DangXuLy --> DaThanhToan: paymentSuccess / createInvoice()
+    DangXuLy --> DaHuy: paymentFailed [retryCount > 3] / cancelOrder()
     
-    DangGiao --> HoanTat: Khách hàng ký nhận thành công
-    DangGiao --> DaHuy: Giao hàng thất bại / Trả hàng
+    state "DangGiaoHang (Shipping)" as DangGiaoHang {
+        [*] --> DongGoi
+        DongGoi --> DangVanChuyen: banGiaoShipper()
+        DangVanChuyen --> PhatHang: denDiaChiNhan()
+    }
 
-    DaHuy --> [*]
+    DaThanhToan --> DangGiaoHang: dispatchGoods()
+    
+    DangGiaoHang --> HoanTat: deliverySuccess / customerSign()
+    DangGiaoHang --> DaHuy: deliveryFailed / returnToStock()
+
     HoanTat --> [*]
+    DaHuy --> [*]
+```
