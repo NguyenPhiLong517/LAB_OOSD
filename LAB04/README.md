@@ -1,21 +1,15 @@
-@startuml StateDiagram_DonHang
-hide empty description
+stateDiagram-v2
+    [*] --> KhoiTao: Tạo đơn hàng từ giỏ
 
-[*] --> KhoiTao : Khách tạo đơn hàng
-KhoiTao --> ChoThanhToan : Bấm Xác nhận & Nhập thẻ
+    KhoiTao --> ChoThanhToan: Nhập thông tin & chọn thanh toán thẻ
+    
+    ChoThanhToan --> DaThanhToan: Cổng thanh toán báo Thành công
+    ChoThanhToan --> DaHuy: Thẻ bị từ chối / Khách hủy giao dịch
 
-state ChoThanhToan {
-    [*] --> GuiYeuCauSangCongTT
-    GuiYeuCauSangCongTT --> KiemTraThe : Gửi thông tin thẻ
-}
+    DaThanhToan --> DangGiao: Kho xuất hàng & bàn giao vận chuyển
+    
+    DangGiao --> HoanTat: Khách hàng ký nhận thành công
+    DangGiao --> DaHuy: Giao hàng thất bại / Trả hàng
 
-ChoThanhToan --> DaThanhToan : Thanh toán thành công (OK)
-ChoThanhToan --> DaHuy : Thẻ lỗi / Từ chối / Hủy đơn
-
-DaThanhToan --> DangGiaoHang : Xuất kho, bàn giao Shipper
-DangGiaoHang --> HoanTat : Khách đã nhận & ký nhận
-DangGiaoHang --> DaHuy : Giao không thành công / Hoàn hàng
-
-HoanTat --> [*]
-DaHuy --> [*]
-@enduml
+    DaHuy --> [*]
+    HoanTat --> [*]
