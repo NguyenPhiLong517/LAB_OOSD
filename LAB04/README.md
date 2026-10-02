@@ -1,32 +1,24 @@
 ```mermaid
 flowchart LR
     KhachHang["fa:fa-user Khách Hàng"]
-    
-    subgraph External["Dịch Vụ Ngoại Vi"]
+    Bank["Cổng Thanh Toán"]
+    Mail["Dịch Vụ Email"]
+
+    subgraph CheckoutProcess["Phân Rã: Đặt Hàng & Thanh Toán"]
         direction TB
-        HT_SanPham["fa:fa-database HT Quản Lý Sản Phẩm"]
-        HT_ThanhToan["fa:fa-credit-card Cổng Thanh Toán Online"]
-        HT_Email["fa:fa-envelope Dịch Vụ Gửi Email"]
+        UC_Init(["Khởi tạo đơn hàng"])
+        UC_Receiver(["Nhập thông tin người nhận"])
+        UC_Shipping(["Chọn giao hàng & Tính cước"])
+        UC_Payment(["Xác thực thẻ & Thanh toán"])
+        UC_Invoice(["Lưu đơn & Kích hoạt gửi Mail"])
     end
 
-    subgraph eShopping["HỆ THỐNG e-SHOPPING"]
-        direction TB
-        UC1(["Xem & Tìm sản phẩm"])
-        UC2(["Quản lý giỏ hàng"])
-        UC3(["Đăng nhập tài khoản"])
-        UC4(["Đăng ký tài khoản"])
-        UC5(["Đặt hàng & Thanh toán"])
-    end
+    KhachHang --> UC_Init
+    UC_Init -. "<<include>>" .-> UC_Receiver
+    UC_Receiver -. "<<include>>" .-> UC_Shipping
+    UC_Init -. "<<include>>" .-> UC_Payment
+    UC_Init -. "<<include>>" .-> UC_Invoice
 
-    KhachHang --> UC1
-    KhachHang --> UC2
-    KhachHang --> UC3
-    KhachHang --> UC5
-
-    UC3 -. "<<extend>>" .-> UC4
-    UC5 -. "<<include>>" .-> UC3
-
-    UC1 <--> HT_SanPham
-    UC5 <--> HT_ThanhToan
-    UC5 --> HT_Email
+    UC_Payment <--> Bank
+    UC_Invoice --> Mail
 ```
