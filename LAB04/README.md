@@ -1,49 +1,32 @@
 ```mermaid
 flowchart LR
-    %% Actors
-    subgraph Actors[" "]
+    KhachHang["fa:fa-user Khách Hàng"]
+    
+    subgraph External["Dịch Vụ Ngoại Vi"]
         direction TB
-        KhachHang["fa:fa-user Khách Hàng"]
-    end
-
-    subgraph ExternalSystems["Hệ Thống Phụ Trợ (External Actors)"]
-        direction TB
-        HT_SanPham["fa:fa-cube HT Quản Lý Sản Phẩm"]
-        HT_ThanhToan["fa:fa-credit-card Cổng Thanh Toán Trực Tuyến"]
+        HT_SanPham["fa:fa-database HT Quản Lý Sản Phẩm"]
+        HT_ThanhToan["fa:fa-credit-card Cổng Thanh Toán Online"]
         HT_Email["fa:fa-envelope Dịch Vụ Gửi Email"]
     end
 
-    %% Use Cases Boundary
     subgraph eShopping["HỆ THỐNG e-SHOPPING"]
         direction TB
-        UC_XemSP(["Xem & Tìm kiếm sản phẩm"])
-        UC_GioHang(["Quản lý giỏ hàng"])
-        UC_DangNhap(["Đăng nhập"])
-        UC_DangKy(["Đăng ký tài khoản"])
-        UC_DatHang(["Đặt hàng & Thanh toán"])
-        
-        %% Use Cases phụ trợ
-        UC_KiemTraKho(["Kiểm tra tồn kho"])
-        UC_TruTien(["Thanh toán trừ tiền thẻ"])
-        UC_GuiMail(["Gửi email xác nhận"])
+        UC1(["Xem & Tìm sản phẩm"])
+        UC2(["Quản lý giỏ hàng"])
+        UC3(["Đăng nhập tài khoản"])
+        UC4(["Đăng ký tài khoản"])
+        UC5(["Đặt hàng & Thanh toán"])
     end
 
-    %% Tương tác của Khách hàng
-    KhachHang --> UC_XemSP
-    KhachHang --> UC_GioHang
-    KhachHang --> UC_DangNhap
-    KhachHang --> UC_DatHang
+    KhachHang --> UC1
+    KhachHang --> UC2
+    KhachHang --> UC3
+    KhachHang --> UC5
 
-    %% Quan hệ giữa các Use Cases
-    UC_DangNhap -. "<<extend>>" .-> UC_DangKy
-    UC_DatHang -. "<<include>>" .-> UC_DangNhap
-    UC_DatHang -. "<<include>>" .-> UC_KiemTraKho
-    UC_DatHang -. "<<include>>" .-> UC_TruTien
-    UC_DatHang -. "<<include>>" .-> UC_GuiMail
+    UC3 -. "<<extend>>" .-> UC4
+    UC5 -. "<<include>>" .-> UC3
 
-    %% Tương tác với Hệ thống ngoài
-    UC_XemSP <--> HT_SanPham
-    UC_KiemTraKho <--> HT_SanPham
-    UC_TruTien <--> HT_ThanhToan
-    UC_GuiMail --> HT_Email
+    UC1 <--> HT_SanPham
+    UC5 <--> HT_ThanhToan
+    UC5 --> HT_Email
 ```
