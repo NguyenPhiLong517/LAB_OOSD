@@ -1,42 +1,38 @@
 ```mermaid
 classDiagram
-    class KhachHang {
-        -string maKH
-        -string hoTen
-        -string cmnd
-        -string diaChi
-        -string dienThoai
-        -string email
-        +dangNhap() bool
-        +dangKy() bool
+    class PhieuGiaoHang {
+        <<abstract>>
+        #string maPhieu
+        #string diaChiNhan
+        #decimal cuocPhiChuan
+        +tinhPhiGiaoHang(decimal tongTien)* decimal
     }
 
-    class DonHang {
-        -string maDonHang
-        -DateTime ngayDat
-        -string nguoiNhan_HoTen
-        -string nguoiNhan_DiaChi
-        -string nguoiNhan_SDT
-        -decimal phiVanChuyen
-        -decimal tongTien
-        +tinhTongTien() decimal
+    class GiaoHangThuong {
+        +tinhPhiGiaoHang(decimal tongTien) decimal
     }
 
-    class ChiTietDonHang {
-        -int soLuong
-        -decimal donGiaBan
-        +tinhThanhTien() decimal
+    class GiaoHangNhanh {
+        +tinhPhiGiaoHang(decimal tongTien) decimal
     }
 
-    class SanPham {
-        -string maSP
-        -string tenSP
-        -decimal giaHienHanh
-        -int soLuongTon
-        +kiemTraTonKho() bool
+    class GiaoHangTrongNgay {
+        +tinhPhiGiaoHang(decimal tongTien) decimal
     }
 
-    KhachHang "1" --> "0..*" DonHang : DatMua
-    DonHang "1" *-- "1..*" ChiTietDonHang : BaoGom
-    SanPham "1" <-- "0..*" ChiTietDonHang : ThamChieu
-```
+    PhieuGiaoHang <|-- GiaoHangThuong
+    PhieuGiaoHang <|-- GiaoHangNhanh
+    PhieuGiaoHang <|-- GiaoHangTrongNgay
+
+    class IPaymentGateway {
+        <<interface>>
+        +validateCard(string soThe, string csv) bool
+        +charge(decimal amount) bool
+    }
+
+    class OnlinePaymentAdapter {
+        +validateCard(string soThe, string csv) bool
+        +charge(decimal amount) bool
+    }
+
+    IPaymentGateway <|.. OnlinePaymentAdapter
