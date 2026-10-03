@@ -1,0 +1,9 @@
+D:\HocTap\tkpmhdt\eShoppingApp\eShoppingApp\obj\Debug\eShoppingApp.csproj.AssemblyReference.cache
+D:\HocTap\tkpmhdt\eShoppingApp\eShoppingApp\obj\Debug\eShoppingApp.Properties.Resources.resources
+D:\HocTap\tkpmhdt\eShoppingApp\eShoppingApp\obj\Debug\eShoppingApp.csproj.GenerateResource.cache
+D:\HocTap\tkpmhdt\eShoppingApp\eShoppingApp\obj\Debug\eShoppingApp.csproj.CoreCompileInputs.cache
+D:\HocTap\tkpmhdt\eShoppingApp\eShoppingApp\bin\Debug\eShoppingApp.exe.config
+D:\HocTap\tkpmhdt\eShoppingApp\eShoppingApp\bin\Debug\eShoppingApp.exe
+D:\HocTap\tkpmhdt\eShoppingApp\eShoppingApp\bin\Debug\eShoppingApp.pdb
+D:\HocTap\tkpmhdt\eShoppingApp\eShoppingApp\obj\Debug\eShoppingApp.exe
+D:\HocTap\tkpmhdt\eShoppingApp\eShoppingApp\obj\Debug\eShoppingApp.pdb
