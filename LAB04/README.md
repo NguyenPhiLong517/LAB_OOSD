@@ -1,3 +1,4 @@
+```mermaid
 classDiagram
     class KhachHang {
         -string maKH
@@ -38,3 +39,4 @@ classDiagram
     KhachHang "1" --> "0..*" DonHang : DatMua
     DonHang "1" *-- "1..*" ChiTietDonHang : BaoGom
     SanPham "1" <-- "0..*" ChiTietDonHang : ThamChieu
+```
