@@ -1,11 +1,8 @@
 ```mermaid
 stateDiagram-v2
-    [*] --> KhoiTao: createOrder()
-    KhoiTao --> ChoThanhToan: submitOrder()
-    ChoThanhToan --> DaThanhToan: paymentSuccess
-    ChoThanhToan --> DaHuy: paymentFailed
-    DaThanhToan --> DangGiaoHang: dispatchGoods()
-    DangGiaoHang --> HoanTat: deliverySuccess
-    DangGiaoHang --> DaHuy: deliveryFailed
-    HoanTat --> [*]
-    DaHuy --> [*]
+    [*] --> ConHang: nhapKhoMoi()
+    ConHang --> TamHetHang: banHetHang [soLuongTon == 0]
+    TamHetHang --> ConHang: nhapThemHang [soLuongTon > 0]
+    ConHang --> NgungKinhDoanh: ngungPhanPhoi()
+    TamHetHang --> NgungKinhDoanh: ngungPhanPhoi()
+    NgungKinhDoanh --> [*]
