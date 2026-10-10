@@ -41,17 +41,8 @@
 
 ---
 
-## 5. LỖI GẶP PHẢI & CÁCH KHẮC PHỤC
 
-| Lỗi gặp phải (Error Code) | Nguyên nhân | Cách khắc phục |
-| :--- | :--- | :--- |
-| **CS1529:** *A using clause must precede all other elements defined in the namespace...* | Do dán gộp mã Designer và mã logic sự kiện vào cùng file `FrmDangKyDoan.cs`, khiến từ khóa `using` nằm giữa thân file. | Tách riêng phần khởi tạo giao diện vào `FrmDangKyDoan.Designer.cs` và chỉ giữ lại phần xử lý sự kiện trong `FrmDangKyDoan.cs`. |
-| **CS0103:** *The name 'ConfigurationManager' does not exist in the current context* | Project chưa được tham chiếu tới thư viện cấu hình hệ thống của .NET Framework trong `DBHelper.cs`. | Vào **References** $\rightarrow$ **Add Reference...** $\rightarrow$ Tìm và tích chọn assembly **`System.Configuration`**. |
-| **Lỗi biên dịch / Missing Output:** *eShoppingApp.exe is missing* | Biên dịch bị dừng do các lỗi cú pháp trên khiến file `.exe` chưa được tạo ra. | Khắc phục xong các lỗi cú pháp và chọn **Build** $\rightarrow$ **Rebuild Solution** trước khi bấm F5/Start. |
-
----
-
-## 6. HƯỚNG DẪN KIỂM TRA & CHẠY LẠI (DÀNH CHO GIẢNG VIÊN)
+## 5. HƯỚNG DẪN KIỂM TRA & CHẠY LẠI (DÀNH CHO GIẢNG VIÊN)
 
 1. **Khởi tạo Cơ sở Dữ liệu:**
    * Mở phần mềm **SQL Server Management Studio (SSMS)**.
