@@ -1,0 +1,10 @@
+D:\HocTap\tkpmhdt\DuLichVanHoaViet\DuLichVanHoaViet\obj\Debug\DuLichVanHoaViet.csproj.AssemblyReference.cache
+D:\HocTap\tkpmhdt\DuLichVanHoaViet\DuLichVanHoaViet\obj\Debug\DuLichVanHoaViet.Properties.Resources.resources
+D:\HocTap\tkpmhdt\DuLichVanHoaViet\DuLichVanHoaViet\obj\Debug\DuLichVanHoaViet.csproj.GenerateResource.cache
+D:\HocTap\tkpmhdt\DuLichVanHoaViet\DuLichVanHoaViet\obj\Debug\DuLichVanHoaViet.csproj.CoreCompileInputs.cache
+D:\HocTap\tkpmhdt\DuLichVanHoaViet\DuLichVanHoaViet\obj\Debug\DuLichVanHoaViet.Forms.FrmDangKyDoan.resources
+D:\HocTap\tkpmhdt\DuLichVanHoaViet\DuLichVanHoaViet\bin\Debug\DuLichVanHoaViet.exe.config
+D:\HocTap\tkpmhdt\DuLichVanHoaViet\DuLichVanHoaViet\bin\Debug\DuLichVanHoaViet.exe
+D:\HocTap\tkpmhdt\DuLichVanHoaViet\DuLichVanHoaViet\bin\Debug\DuLichVanHoaViet.pdb
+D:\HocTap\tkpmhdt\DuLichVanHoaViet\DuLichVanHoaViet\obj\Debug\DuLichVanHoaViet.exe
+D:\HocTap\tkpmhdt\DuLichVanHoaViet\DuLichVanHoaViet\obj\Debug\DuLichVanHoaViet.pdb
